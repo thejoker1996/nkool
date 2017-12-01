@@ -1,0 +1,59 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="frontcss.css">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body style="background-color:lavender;">
+<div class="nav-bar">
+
+<ul>
+<li><img src="logo.jpg"></li>
+<li><a href='news.html' id="link"><strong>HOME</strong></a></li>
+<li><a href='Gallery.php' id="link"><strong>GALLERY</strong></a></li>
+<li ><a href='home.html' id="link"><strong>NEWS</strong></a></li>
+<div class="login"><a href='login.html'><strong>LOGIN</strong></a></div>
+
+</ul>
+</div>
+<div style="margin-top:10%;margin-left:30%;border:2px lavender;">
+<div id="txthint" style="border:1px solid black;margin-top:35%;margin-left:30%;width:20%;height:20px;"></div>
+<div  style="border:1px solid black;margin-top:1%;margin-left:30%;width:20%;height:20px;">*=Required field</div>
+
+<form action="join.php" method="POST">
+<label>Sign up:</label><br>
+<br>
+
+<input  style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:lavender;width:auto;" type="text" name="uname" placeholder="username*" onKeyup="check(this.value)"><br><br>
+<input  style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:lavender;width:auto;" type="email" name="uemail" placeholder="email@some.com*"><br><br>
+<input  style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:lavender;width:auto;" type="password" name="pass" placeholder="password*"><br><br>
+<input  style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:lavender;width:auto;" type="number" name="number" placeholder="phone*"><br><br>
+<input  style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:lavender;width:auto;" type="text" name="state" placeholder="state*"><br><br>
+<input  style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:lavender;width:auto;" type="text" name="city" placeholder="city/town*"><br>
+<input  style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:lavender;width:auto;" type="number" name="postal" placeholder="zip*"><br><br>
+<input  style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:lavender;width:auto;" type="text" name="addr" placeholder="address*"><br><br>
+<input  style="border:1px solid black;border-radius:5px;height:50px;width:100px;" type="submit" name="signup" value="signup"><br>
+</form>
+<script>
+function check(str){
+  if (str.length==0) { 
+    document.getElementById("txthint").innerHTML="";
+
+    return;
+  }
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("txthint").innerHTML = this.responseText;
+	 document.getElementById("txthint").innerHTML.style.background-color = "red";
+    }
+  };
+  xhttp.open("GET", "joincheck.php?q="+str, true);
+  xhttp.send();
+}
+</script>
+</div>
+
+</body>
+</html>

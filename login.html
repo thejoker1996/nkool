@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="frontcss.css">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<body style="background-color:grey;">
+<div class="nav-bar">
+
+<ul>
+<li><img src="logo.jpg"></li>
+<li><a href='home.html' id="link"><strong>HOME</strong></a></li>
+<li><a href='Gallery.php' id="link"><strong>GALLERY</strong></a></li>
+<li ><a href='news.html' id="link"><strong>NEWS</strong></a></li>
+<div class="login"><a href='login.html'><strong>LOGIN</strong></a></div>
+
+</ul>
+</div>
+<div class="main" style="margin-top:20%;margin-left:40%;border:2px lavender;">
+
+<form action="logincheck.php" method="GET">
+<label>LOGIN:</label><br>
+<br>
+
+<input style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:grey;width:auto;" type="text" name="uname" placeholder="username"><br><br>
+<input  style="border:1px solid black;border-top:none;border-left:none;border-right:none;border-radius:1px;height:50px;background-color:grey;width:auto;" type="password" name="up" placeholder=""><br><br>
+<input  style="border:1px solid black;border-radius:5px;height:50px;width:100px;" type="submit" name="login" value="Login">
+</form>
+<a href='join.html' style="text-decoration:none;">create account</a><br><br>
+<a href='forgot.html' style="text-decoration:none;">? forgot password</a>
+</div>
+
+</body>
+</html>
